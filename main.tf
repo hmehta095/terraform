@@ -30,8 +30,8 @@ resource "aws_instance" "blog" {
 
 resource "aws_security_group" "blog" {
   name        = "blog"   #it will reflect in aws
-  description = "Allow" http and https in. All everything out"
-
+  description = "Allow http and https in. All everything out"
+  
   vpc_id = data.aws_vpc.default.id
 }
 
