@@ -13,7 +13,7 @@ data "aws_ami" "app_ami" {
 
   owners = ["979382823631"] # Bitnami
 }
-data "aws_vpc" "default"{
+data "aws_vpc" "default" {
   default = true
 }
 
@@ -28,7 +28,7 @@ resource "aws_instance" "blog" {
   }
 }
 
-resource "aws_security_group" "blog"{
+resource "aws_security_group" "blog" {
   name        = "blog"   #it will reflect in aws
   description = "Allow" http and https in. All everything out"
 
@@ -60,7 +60,7 @@ resource "aws_security_group_rule" "blog_everything_out" {
   from_port   = 0
   to_port     = 0
   protocol    = "-1"
-  cidr_blocks = ["0.0.0.0/0"]  # we are typing this cidr 0.0.0.0/0 because this is public website. You can mention your own IP for security
+  cidr_blocks = ["0.0.0.0/0"]  
   
   security_group_id = aws_security_group.blog.id
   }
