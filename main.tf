@@ -17,7 +17,7 @@ data "aws_ami" "app_ami" {
 resource "aws_vpc" "custom_vpc" {
   cidr_block = "10.0.0.0/16"
   enable_dns_support = true
-  enabledns_hostnames = true
+  enable_dns_hostnames = true
 
   tags = {
   Name = "blog_vpc"
