@@ -14,8 +14,12 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
-data "aws_vpc" "default" {
-  default = true
+data "aws_vpc" "custom_vpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tag = {
+  Name = "blog_cpc"
+}
 }
 
 resource "aws_instance" "blog" {
@@ -33,7 +37,7 @@ resource "aws_security_group" "blog" {
   tags = {
     Terraform = "true"
   }
-  vpc_id = data.aws_vpc.default.id
+  vpc_id = data.aws_vpc.custom_vpc.id
 }
 
 resource "aws_security_group_rule" "blog_http_in" {
