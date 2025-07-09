@@ -14,7 +14,7 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 data "aws_vpc" "default" {
-  default = true      # Defining a VPC and terraform has feature to pull the default VPC
+  default = true      # Defining a VPC and terraform has feature to pull the default VPC in aws
 }
 
 resource "aws_instance" "blog" {
