@@ -17,7 +17,7 @@ data "aws_ami" "app_ami" {
 data "aws_vpc" "custom_vpc" {
   cidr_block = "10.0.0.0/16"
 
-  tag = {
+  tags = {
   Name = "blog_cpc"
 }
 }
