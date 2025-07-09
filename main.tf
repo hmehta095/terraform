@@ -15,10 +15,10 @@ data "aws_ami" "app_ami" {
 }
 
 resource "aws_vpc" "custom_vpc" {
-  cidr_block = "10.0.0.0/16"
+  default = "10.0.0.0/16"
 
   tags = {
-  Name = "blog_cpc"
+  Name = "blog_vpc"
 }
 }
 
