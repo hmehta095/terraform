@@ -81,6 +81,7 @@ module "blog_alb" {
 
   tags = {
     Environment = var.environment.name
+    enable_deletion_protection = false
   }
 }
 
