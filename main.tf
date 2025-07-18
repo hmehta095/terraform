@@ -37,7 +37,7 @@ module "blog_autoscaling" {
   name = "blog"
 
   min_size            = 1
-  max_size            = 2
+  max_size            = 3
   vpc_zone_identifier = module.blog_vpc.public_subnets
  // scaling_policies    = module.blog_alb.target_groups
   security_groups     = [module.blog_sg.security_group_id]
