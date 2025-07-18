@@ -43,11 +43,11 @@ name = "dev"
 }
 
 
-variable "min_size" {
+variable "asg_min_size" {
   description = "Minimum number of instance in ASG"
   default     = 1
 }
-variable "max_size" {
+variable "asg_max_size" {
   description = "Maximum number of instance in ASG"
   default     = 2
 }
