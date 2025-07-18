@@ -72,7 +72,7 @@ module "blog_alb" {
       port     = 80
       protocol = "HTTP"
       redirect = {
-        port        = "443"
+        port        = "80"
         protocol    = "HTTPS"
         status_code = "HTTP_301"
       }
